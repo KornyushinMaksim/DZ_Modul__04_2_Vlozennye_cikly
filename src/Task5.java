@@ -4,12 +4,11 @@
 //        Высота каждой фигуры должны задаваться с клавиатуры.
 //        Можно использовать вывод только одной «звёздочки» в System.out.print(“*”).
 //
-//        Задание 3
-//        Равнобедренный треугольник: заполненный и пустой.
+//        Параллелограмм: заполненный и пустой.
 
 import java.util.Scanner;
 
-public class Task3 {
+public class Task5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите высоту фигуры: ");
@@ -17,8 +16,8 @@ public class Task3 {
 
         System.out.println("\nЗаполненный");
         for (int i = 0; i < a; i++){
-            for (int j = 0; j < a; j++){
-                if (i >= j && i + j >= a - 1) System.out.print(" * ");
+            for (int j = 0; j < a * 4; j++){
+                if (j <= a * 3 - i - 1 && j >= a - i) System.out.print(" * ");
                 else System.out.print("   ");
             }
             System.out.println();
@@ -26,8 +25,9 @@ public class Task3 {
 
         System.out.println("\nПустой");
         for (int i = 0; i < a; i++){
-            for (int j = 0; j < a; j++){
-                if (i == j && i >= a / 2 || i + j == a - 1 && i >= a / 2 || i == a - 1) System.out.print(" * ");
+            for (int j = 0; j < a * 3; j++){
+                if (j == a * 3 - i - 1 || j == a - i || (i == a - 1 && j >= 1 && j < a * 2) || (i == 0 && j > a))
+                    System.out.print(" * ");
                 else System.out.print("   ");
             }
             System.out.println();

@@ -15,27 +15,50 @@ public class Task4 {
         int a = in.nextInt();
 
         System.out.println("\nЗаполненный");
+//        for (int i = 0; i < a; i++){
+//            for (int j = 0; j < a; j++){
+//                if (i >= j && i + j >= a - 1) System.out.print(" * ");
+//                else System.out.print("   ");
+//            }
+//            System.out.println();
+//        }
+//        for (int i = 1; i < a; i++){
+//            for (int j = 0; j < a; j++){
+//                if (i <= j && i + j <= a - 1) System.out.print(" * ");
+//                else System.out.print("   ");
+//            }
+//            System.out.println();
+//        }
+
         for (int i = 0; i < a; i++){
-            for (int j = 0; j < a; j++){
-                if (i >= j && i + j >= a - 1) System.out.print(" * ");
+            for (int j = 0; j < a * 2; j++){
+                if (j <= a + i && j >= a - i) System.out.print(" * ");
                 else System.out.print("   ");
             }
             System.out.println();
         }
-        for (int i = 1; i < a; i++){
-            for (int j = 0; j < a; j++){
-                if (i <= j && i + j <= a - 1) System.out.print(" * ");
+        for (int i = 0; i < a - 1; i++){
+            for (int j = 0; j < a * 2; j++){
+                if (i < j - 1 && j <= (a - 1) * 2 - i) System.out.print(" * ");
                 else System.out.print("   ");
             }
             System.out.println();
         }
 
-//        for (int i = 1; i < a; i++){
-//            for (int j = 0; j < a * 2; j++){
-//                if (i <= a - j && i >= a + j) System.out.print(" * ");
-//                else System.out.print("   ");
-//            }
-//            System.out.println();
-//        }
+        System.out.println("\nПустой");
+        for (int i = 0; i < a; i++){
+            for (int j = 0; j < a * 2; j++){
+                if (j == a + i || j == a - i) System.out.print(" * ");
+                else System.out.print("   ");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < a - 1; i++){
+            for (int j = 0; j < a * 2; j++){
+                if (i == j - 2|| j == (a - 1) * 2 - i) System.out.print(" * ");
+                else System.out.print("   ");
+            }
+            System.out.println();
+        }
     }
 }
