@@ -17,8 +17,8 @@ public class Task3 {
 
         System.out.println("\nЗаполненный");
         for (int i = 0; i < a; i++){
-            for (int j = 0; j < a; j++){
-                if (i >= j && i + j >= a - 1) System.out.print(" * ");
+            for (int j = 0; j < a * 2; j++){
+                if ((j >= a - i) && (j <= a + i)) System.out.print(" * ");
                 else System.out.print("   ");
             }
             System.out.println();
@@ -26,8 +26,8 @@ public class Task3 {
 
         System.out.println("\nПустой");
         for (int i = 0; i < a; i++){
-            for (int j = 0; j < a; j++){
-                if (i == j && i >= a / 2 || i + j == a - 1 && i >= a / 2 || i == a - 1) System.out.print(" * ");
+            for (int j = 0; j < a * 2; j++){
+                if ((j == a - i) || (j == a + i) || ( i == a - 1 && j > 1)) System.out.print(" * ");
                 else System.out.print("   ");
             }
             System.out.println();
