@@ -12,7 +12,6 @@ public class Task10 {
         int num = in.nextInt();
         int copyNum = num;
         int count = 0;
-        boolean flag = true;
 
         while (copyNum > 0) {
             copyNum /= 10;
@@ -96,11 +95,11 @@ public class Task10 {
                 case 6:
                     for (int i = 0; i < 7; i++) {
                         for (int j = 0; j < 5; j++) {
-                            if ((j == 0 && i != 0 && i != 6) ||
-                                    (j == 4 && i > 2 && i < 6) ||
-                                    (i == 0 && j != 0 && j != 4) ||
-                                    (i == 2 && j != 0 && j != 4) ||
-                                    (i == 6 && j != 0 && j != 4)) System.out.print("*");
+                            if (j == 0 && i != 0 && i != 6 ||
+                                    j == 4 && i > 2 && i < 6 ||
+                                    i == 0 && j != 0 && j != 4 ||
+                                    i == 2 && j != 4 ||
+                                    i == 6 && j != 0 && j != 4) System.out.print("*");
                             else System.out.print(" ");
                         }
                         System.out.println();
@@ -141,8 +140,8 @@ public class Task10 {
                     }
                     break;
             }
-            int temporary = num - ( key * ((int) Math.pow(10, d - 1)));
-            num = temporary;
+            int temp = num - ( key * ((int) Math.pow(10, d - 1)));
+            num = temp;
         }
     }
 }
